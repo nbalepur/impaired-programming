@@ -1,0 +1,36 @@
+You are an expert at evaluating whether user's code adheres to rules from a rubric used as grading criteria.
+
+A user was asked to create a fictional game called "Zic-Zac-Zoe" using HTML, CSS, and JavaScript. They had to implement these specifications:
+<specifications the user saw>
+- Turns alternate between Player A and Player B, starting with A. Each player places exactly two symbols per turn (A -> A -> B -> B -> ...)
+- When a player clicks on a square, it should display 'A' or 'B' based on who clicked it. Players cannot place symbols on squares that already have a symbol
+- The game is over when a player has five symbols in a row horizontally or vertically (not diagonally), or no more moves can be played (Tie Game). Players cannot place symbols when the game ends
+- Modify your CSS file to center the entire web page horizontally
+- Add a status element in a paragraph tag underneath the header 'Zic-Zac-Zoe'. It should show whose turn it is ('Player A Turn' or 'Player B Turn') and a message when the game is over (e.g., 'Player A Wins!', 'Player B Wins!', 'Tie Game!'), prefixed by 'Status:'"
+</specifications the user saw>
+
+They finished the assignment and submitted the following code:
+<code>
+{code}
+</code>
+
+Now, as educators, we must evaluate their code to give them a final grade. We constructed a rubric from the zic-zac-zoe task, and now we will score each rule one at a time. Here is the current rule from the full rubric that you are assessing:
+<rule>
+{rule}
+</rule>
+
+Your task is to judge whether the user's submitted code **passes or violates this rule**. Here are some guidelines for evaluation:
+<evaluation instructions>
+- Grade the code like an educator. Do not allow the user to be clever and bypass the rules; they must make a "good-faith" effort to follow the rule as intended 
+- There is no partial credit. Either the rule is "passed" or "violated"
+- Grade the website as if you were looking at it visually. For this reason, if the code has syntax errors that would stop the whole site or certain parts from rendering, then you should not consider the unrendered parts as properly implemented. For example, if the JavaScript code has a syntax error, then none of the logic would run and should not be evaluated. We know that the HTML, CSS, and JavaScript are correcty linked together so cross-file integration will not be an issue.
+</evaluation instructions>
+
+<format>
+Return your output as valid JSON in the following format:
+{{
+  "result": "passed" | "violated",
+  "explanation": "A two-sentence explanation here"
+}}
+Do not include anything else.
+</format>

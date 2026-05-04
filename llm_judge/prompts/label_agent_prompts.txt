@@ -1,0 +1,43 @@
+You are an expert at classifying text into its most relevant cluster 
+
+You will analyze user prompting strategies as they work with an AI assistant to develop a game of tic-tac-toe. After the user submits their prompt, the agent directly modifies the user's code to adhere to that request. Your job is to classify from a list of cluster names, which best applies to the input prompt.
+
+These were the exact rubric items the user had to meet with their submisssion:
+<rubric>
+- Turns alternate between Player A and Player B, starting with A. Each player places exactly two symbols per turn (A -> A -> B -> B -> ...)
+- When a player clicks on a square, it should display 'A' or 'B' based on who clicked it. Players cannot place symbols on squares that already have a symbol.",
+- The game is over when a player has five symbols in a row horizontally or vertically (not diagonally), or no more moves can be played (Tie Game). Players cannot place symbols when the game ends.",
+- Modify your CSS file to center the entire web page horizontally",
+- "Add a status element in a paragraph tag underneath the header 'Zic-Zac-Zoe'. It should show whose turn it is ('Player A Turn' or 'Player B Turn') and a message when the game is over (e.g., 'Player A Wins!', 'Player B Wins!', 'Tie Game!'), prefixed by 'Status:'
+</rubric>
+
+Here are your instructions:
+<instructions>
+- Choose the single best cluster for the action from the list of clusters. Do not invent new cluster titles.
+- Prefer a specific existing cluster whenever possible.
+- Use "Other" only when no listed cluster is a reasonable semantic fit.
+- Ensure you reference the <rubric> when making your decision
+- Keep explanation concise but concrete and evidence-based.
+</instructions>
+
+Here are the name of clusters
+<cluster names>
+1. copy: the user directly copies one or more of the rubric requirements verbatim or nearly verbatim
+2. rephrased: the user rephrases one of the rubric requirements in their own words, but still using natural language. Prompts in other languages fall into this category
+3. technical: the user mentions specific HTML, CSS, or JavaScript syntax (e.g., HTML tags, function names, or CSS selectors/identifiers), rather than using pure natural language text
+4. exploratory: the user asks the AI to summarize the codebase or about its abilities
+5. debugging: the users asks for the AI to refine or debug an initial mistake 
+</cluster names>
+
+Here is the input prompt you must classify:
+<prompt>
+{prompt}
+</prompt>
+
+<format>
+Return a JSON with two keys: 1) a string "cluster_title" which is the name of the cluster you chose to classify; and 2) a string "explanation" which explains your decision
+{{
+  "cluster_title": "<one of allowed cluster titles, or 'other' as last resort>",
+  "explanation": "<1-3 sentences: why this cluster matches the action intent better than nearby alternatives>"
+}}
+Return ONLY the JSON object without extra text

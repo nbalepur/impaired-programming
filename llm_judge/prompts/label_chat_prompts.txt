@@ -1,0 +1,45 @@
+You are an expert at classifying text into its most relevant cluster 
+
+You will analyze user prompting strategies as they work with an AI assistant to develop a game of tic-tac-toe. After the user submits their prompt, the chatbot responds to that request, but it only helps the user by returning high-level syntax guidance; it never executes tasks on the user's behalf. Your job is to classify from a list of cluster names, which best applies to the input prompt.
+
+These were the exact rubric items the user had to meet with their submisssion:
+<rubric>
+- Turns alternate between Player A and Player B, starting with A. Each player places exactly two symbols per turn (A -> A -> B -> B -> ...)
+- When a player clicks on a square, it should display 'A' or 'B' based on who clicked it. Players cannot place symbols on squares that already have a symbol.",
+- The game is over when a player has five symbols in a row horizontally or vertically (not diagonally), or no more moves can be played (Tie Game). Players cannot place symbols when the game ends.",
+- Modify your CSS file to center the entire web page horizontally",
+- "Add a status element in a paragraph tag underneath the header 'Zic-Zac-Zoe'. It should show whose turn it is ('Player A Turn' or 'Player B Turn') and a message when the game is over (e.g., 'Player A Wins!', 'Player B Wins!', 'Tie Game!'), prefixed by 'Status:'
+</rubric>
+
+Here are your instructions:
+<instructions>
+- Choose the single best cluster for the action from the list of clusters. Do not invent new cluster titles.
+- Prefer a specific existing cluster whenever possible.
+- Use "Other" only when no listed cluster is a reasonable semantic fit.
+- Ensure you reference the <rubric> when making your decision
+- Keep explanation concise but concrete and evidence-based.
+</instructions>
+
+Here are the name of clusters
+<cluster names>
+1. syntax_help: the user asks about basic HTML, CSS, or JavaScript syntax, operators, methods, DOM APIs, selectors, attributes, or language mechanics
+2. design_help: the user asks how to structure the task, reason through the game rules, manage turns, check win/tie conditions, or decompose the problem without requesting a full solution
+3. snippet: the user asks for a specific localized code fragment, function, condition, loop body, counter, or partial implementation step
+4. debugging: the user reports an error, broken behavior, unexpected output, layout issue, or asks the AI to fix/refine something that is not working
+5. clarification: the user asks whether a prior suggestion is correct, where code should go, what a term means in context, or how to adapt a previous answer
+6. jailbreaking: the user asks for a complete implementation, tries to bypass the chatbot’s limits, copies or reframes the whole assignment as a request for finished code, or uses pressure tactics to obtain prohibited help
+7. urgency: the user expresses frustration, distress, profanity, dissatisfaction, time pressure, or emotional escalation; this can be used as a secondary label alongside one of the other categories
+</cluster names>
+
+Here is the input prompt you must classify:
+<prompt>
+{prompt}
+</prompt>
+
+<format>
+Return a JSON with two keys: 1) a string "cluster_title" which is the name of the cluster you chose to classify; and 2) a string "explanation" which explains your decision
+{{
+  "cluster_title": "<one of allowed cluster titles, or 'other' as last resort>",
+  "explanation": "<1-3 sentences: why this cluster matches the action intent better than nearby alternatives>"
+}}
+Return ONLY the JSON object without extra text
