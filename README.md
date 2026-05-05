@@ -3,7 +3,7 @@
 This repository is the official implementation of the paper: **(Im)Paired Programming: Coding Agents Improve Productivity but Harm Understanding**
 
 <p align="center">
-  <img src="images/study.png" alt="Study Figure" width="700" />
+  <img src="images/study.png" alt="Study Figure" />
 </p>
 
 In our study, users work with either an AI agent or chatbot to complete website development tasks. We show that agent users have improved productivity, but worse understanding.
